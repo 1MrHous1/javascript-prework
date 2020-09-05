@@ -1,0 +1,2 @@
+let playerMove = "papier";
+
