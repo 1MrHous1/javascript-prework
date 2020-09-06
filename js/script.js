@@ -1,26 +1,11 @@
-
-
-function printMessage(msg){
-	let div = document.createElement('div');
-	div.innerHTML = msg;
+//function printMessage(msg){
+	//let div = document.createElement('div');
+	//div.innerHTML = msg;
 	// document.getElementById('messages').appendChild(div);
-}
+//}
 // function clearMessages(){
 // 	document.getElementById('messages').innerHTML = '';
 // }
-
-
-
-let playerMove = getMoveName(prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce."));
-console.log("Gracz wpisał: " + argplayerMove);
-
-let randomNumber =  Math.floor(Math.random() * 3 + 1);
-console.log('Wylosowana liczna to:' + randomNumber)
-
-
-let computerMove = getMoveName(randomNumber);
-printMessage('Ruch komputera to: ' + computerMove)
-
 function getMoveName(argMoveId){
 
     if(argMoveId == 1){
@@ -33,33 +18,45 @@ function getMoveName(argMoveId){
         printMessage('Nie znam ruchu o id ' + argMoveId + '.');
     return 'nieznany ruch';
     }
-  }
-
-printMessage("Twój ruch to: " + PlayerMove);
-
-
-  function displayResult(argComputerMove, argPlayerMove){
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+}
+function displayResult(argComputerMove, argPlayerMove){
+    console.log('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
   
 
       if (argComputerMove == 'kamień' && argPlayerMove == 'papier'){
-        printMessage('Ty wygrywasz!');
+        console.log('Ty wygrywasz!');
       }
       else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
-        printMessage('Ty wygrywasz!');
+        console.log('Ty wygrywasz!');
       }
       else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
-        printMessage('Ty wygrywasz!');
+        console.log('Ty wygrywasz!');
       }
       
       else if (argComputerMove == argPlayerMove){
-        printMessage('Remis!');
+        console.log('Remis!');
       }
     
       else {
-        printMessage('Tym razem przegrywasz :(');
+        console.log('Tym razem przegrywasz :(');
       }
   }
-  console.log(displayResult());
-  console.log('moves:', argComputerMove, argPlayerMove);
 
+
+let playerMove = getMoveName(prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce."));
+console.log("Gracz wpisał: " + playerMove);
+
+let randomNumber =  Math.floor(Math.random() * 3 + 1);
+console.log('Wylosowana liczba to:' + randomNumber)
+
+
+let computerMove = getMoveName(randomNumber);
+console.log('Ruch komputera to: ' + computerMove)
+
+
+//printMessage("Twój ruch to: " + PlayerMove);
+
+
+  
+console.log(displayResult(computerMove,playerMove));
+console.log('moves:', computerMove, playerMove);
