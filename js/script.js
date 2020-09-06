@@ -1,21 +1,25 @@
 
 
-let playerMove = getMoveName(prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce."));
-console.log("Gracz wpisał: " + playerMove);
-
-const randomNumber = () => Math.floor(Math.random() * 3 + 1);
-
-let computerMove = getMoveName(randomNumber);
-
 function printMessage(msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	// document.getElementById('messages').appendChild(div);
 }
-
 // function clearMessages(){
 // 	document.getElementById('messages').innerHTML = '';
 // }
+
+
+
+let playerMove = getMoveName(prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce."));
+console.log("Gracz wpisał: " + argplayerMove);
+
+let randomNumber =  Math.floor(Math.random() * 3 + 1);
+console.log('Wylosowana liczna to:' + randomNumber)
+
+
+let computerMove = getMoveName(randomNumber);
+printMessage('Ruch komputera to: ' + computerMove)
 
 function getMoveName(argMoveId){
 
@@ -25,14 +29,14 @@ function getMoveName(argMoveId){
         return 'papier';
     }else if (argMoveId == 3){
         return 'nożyce';
-    }  
-    printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+    }  else {
+        printMessage('Nie znam ruchu o id ' + argMoveId + '.');
     return 'nieznany ruch';
+    }
   }
 
-printMessage("Twój ruch to: " + playerMove);
+printMessage("Twój ruch to: " + PlayerMove);
 
-console.log(getMoveName);
 
   function displayResult(argComputerMove, argPlayerMove){
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
@@ -57,3 +61,5 @@ console.log(getMoveName);
       }
   }
   console.log(displayResult());
+  console.log('moves:', argComputerMove, argPlayerMove);
+
