@@ -1,11 +1,7 @@
-//function printMessage(msg){
-	//let div = document.createElement('div');
-	//div.innerHTML = msg;
-	// document.getElementById('messages').appendChild(div);
-//}
-// function clearMessages(){
-// 	document.getElementById('messages').innerHTML = '';
-// }
+function playGame(){
+    clearMessages()
+
+
 function getMoveName(argMoveId){
 
     if(argMoveId == 1){
@@ -56,7 +52,19 @@ console.log('Ruch komputera to: ' + computerMove)
 
 //printMessage("Twój ruch to: " + PlayerMove);
 
-
-  
 console.log(displayResult(computerMove,playerMove));
 console.log('moves:', computerMove, playerMove);
+}
+
+
+document.getElementById('play-rock').addEventListener('click', function(){
+  playGame(1)
+} );
+
+document.getElementById('play-paper').addEventListener('click', function(){
+  playGame(2)
+});
+
+document.getElementById('play-scissors').addEventListener('click', function(){
+  playGame(3)
+});
